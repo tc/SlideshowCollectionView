@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlayerCollectionView" customModule="SlideshowCollectionView" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3wC-aY-hpt">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="465"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.15294118230000001" green="0.77254909279999995" blue="0.16078431900000001" alpha="1" colorSpace="deviceRGB"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SHn-nI-6HC">
+                        <size key="itemSize" width="600" height="465"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Bmz-sZ-vrI">
+                    <rect key="frame" x="281" y="428" width="39" height="37"/>
+                    <animations/>
+                </pageControl>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="3wC-aY-hpt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="07X-ut-Ev6"/>
+                <constraint firstAttribute="bottom" secondItem="3wC-aY-hpt" secondAttribute="bottom" id="Efb-Em-mAm"/>
+                <constraint firstItem="3wC-aY-hpt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vsq-xC-Cq9"/>
+                <constraint firstItem="Bmz-sZ-vrI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dRq-qb-ClW"/>
+                <constraint firstAttribute="bottom" secondItem="Bmz-sZ-vrI" secondAttribute="bottom" id="jWG-AR-Jdh"/>
+                <constraint firstAttribute="trailing" secondItem="3wC-aY-hpt" secondAttribute="trailing" id="qi9-re-c1K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="3wC-aY-hpt" id="0mp-aN-iPx"/>
+                <outlet property="pageControl" destination="Bmz-sZ-vrI" id="e33-yq-Jpd"/>
+            </connections>
+            <point key="canvasLocation" x="461" y="320.5"/>
+        </view>
+    </objects>
+</document>
