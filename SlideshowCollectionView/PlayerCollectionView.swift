@@ -23,6 +23,17 @@ class PlayerCollectionView: UIView, UICollectionViewDataSource, UICollectionView
         }
     }
     
+    override func awakeAfterUsingCoder(aDecoder: NSCoder) -> AnyObject? {
+        if self.subviews.count == 0 {
+            return loadNib()
+        }
+        return self
+    }
+    
+    private func loadNib() -> PlayerCollectionView {
+        return NSBundle.mainBundle().loadNibNamed("PlayerCollectionView", owner: nil, options: nil)[0] as! PlayerCollectionView
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -58,8 +69,10 @@ class PlayerCollectionView: UIView, UICollectionViewDataSource, UICollectionView
     
     // MARK - Player Movement
     func goToPage(index:Int) {
-        let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        self.collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
-        self.pageControl?.currentPage = index
+        if (index < items?.count ?? 0) {
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            self.collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+            self.pageControl?.currentPage = index
+        }
     }
 }

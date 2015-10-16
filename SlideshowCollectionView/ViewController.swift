@@ -12,15 +12,15 @@ class ViewController: UIViewController {
     var index = 0
     var items = ["A", "B", "C"]
     
-    @IBOutlet weak var playerView: PlayerCollectionView!
+    @IBOutlet weak var playerView: PlayerCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
-        playerView.items = items
+        playerView?.items = items
         NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,13 +29,13 @@ class ViewController: UIViewController {
     }
 
     func update() {
+        NSLog("Going to \(index)")
         playerView?.goToPage(index)
         index += 1
         
-        if ( index > items.count ) {
+        if ( index >= items.count ) {
             index = 0
         }
     }
-
 }
 
