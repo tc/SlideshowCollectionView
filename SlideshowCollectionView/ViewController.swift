@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     }
 
     func update() {
-        NSLog("Going to \(index)")
+        NSLog("ViewController#Going to \(index)")
         playerView?.goToPage(index)
         index += 1
         

@@ -70,8 +70,9 @@ class PlayerCollectionView: UIView, UICollectionViewDataSource, UICollectionView
     // MARK - Player Movement
     func goToPage(index:Int) {
         if (index < items?.count ?? 0) {
+            NSLog("PlayerCollectionView#going to \(index)")
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            self.collectionView?.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+            self.collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.CenteredVertically, animated: true)
             self.pageControl?.currentPage = index
         }
     }
